@@ -1,0 +1,202 @@
+/* ==========================================================================
+   Estilos inspirados en la Identidad Visual de LG
+   ========================================================================== */
+
+/* Variables de color LG */
+:root {
+    --lg-red: #A50034;          /* Rojo / Granate insignia de LG */
+    --lg-red-hover: #800028;    /* Tono más oscuro para hovers */
+    --lg-red-light: #FFF0F4;    /* Fondo suave para destaques */
+    --bg-main: #F4F5F7;         /* Gris claro de fondo general */
+    --card-bg: #FFFFFF;         /* Blanco para tarjetas y contenedores */
+    --text-dark: #222222;       /* Texto principal */
+    --text-muted: #666666;      /* Texto secundario y etiquetas */
+    --border-color: #E0E0E0;    /* Bordes suaves */
+    --radius-main: 10px;        /* Bordes redondeados modernos */
+    --shadow-soft: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Configuración General */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-dark);
+    line-height: 1.6;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Título Principal */
+h1 {
+    color: var(--lg-red);
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 25px;
+    letter-spacing: -0.5px;
+}
+
+/* Contenedor del Formulario */
+form {
+    background-color: var(--card-bg);
+    max-width: 650px;
+    width: 100%;
+    padding: 35px 30px;
+    border-radius: var(--radius-main);
+    box-shadow: var(--shadow-soft);
+    border-top: 5px solid var(--lg-red);
+}
+
+/* Grupos de campos (Fieldsets) */
+fieldset {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px 25px;
+    margin-bottom: 25px;
+    background-color: #FAFAFA;
+}
+
+legend {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--lg-red);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 0 10px;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+}
+
+/* Etiquetas y Leyendas internas */
+label, p {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-top: 12px;
+    margin-bottom: 6px;
+}
+
+fieldset p {
+    font-size: 0.95rem;
+    color: var(--lg-red);
+    margin-top: 15px;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+/* Campos de entrada de texto, e-mail, número y selectores */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 0.95rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background-color: #FFFFFF;
+    color: var(--text-dark);
+    transition: all 0.2s ease-in-out;
+    outline: none;
+}
+
+/* Efecto Focus (al hacer clic en los campos) */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--lg-red);
+    box-shadow: 0 0 0 3px rgba(165, 0, 52, 0.15);
+}
+
+/* Campo de Rango / Satisfacción */
+input[type="range"] {
+    width: 100%;
+    accent-color: var(--lg-red);
+    margin-top: 8px;
+    cursor: pointer;
+}
+
+/* Radio Buttons y Checkboxes */
+input[type="radio"],
+input[type="checkbox"] {
+    accent-color: var(--lg-red);
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+/* Alineación horizontal de opciones Radio / Checkbox con sus Labels */
+fieldset label:has(input[type="radio"]),
+fieldset label:has(input[type="checkbox"]) {
+    display: inline-flex;
+    align-items: center;
+    font-weight: 400;
+    margin-top: 4px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    color: var(--text-dark);
+}
+
+/* Textarea de Comentarios */
+textarea {
+    resize: vertical;
+    min-height: 100px;
+    font-family: inherit;
+}
+
+/* Botón de Envío */
+button[type="submit"] {
+    width: 100%;
+    background-color: var(--lg-red);
+    color: #FFFFFF;
+    border: none;
+    padding: 14px 20px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 25px; /* Estilo de botón redondeado LG */
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 10px rgba(165, 0, 52, 0.25);
+}
+
+button[type="submit"]:hover {
+    background-color: var(--lg-red-hover);
+}
+
+button[type="submit"]:active {
+    transform: scale(0.99);
+}
+
+/* Adaptación para pantallas pequeñas (Móviles) */
+@media (max-width: 600px) {
+    body {
+        padding: 15px 10px;
+    }
+
+    form {
+        padding: 20px 15px;
+    }
+
+    fieldset {
+        padding: 15px;
+    }
+}

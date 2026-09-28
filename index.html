@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calificación de Servicio LG</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="icon" type="image/x-icon" href="lg simbolo.svg">
+</head>
+<body>
+<img src="lg.svg" alt="logo" width="150px"></a>
+    <h1>Encuesta y Calificación de Servicio Técnico LG</h1>
+
+    <form action="proceso.php" method="post" enctype="multipart/form-data">
+
+        <!-- Grupo 1: Datos del Cliente y Servicio -->
+        <fieldset>
+            <legend>Datos del Cliente y Servicio</legend>
+
+            <label for="nombre">Nombre completo</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Nombre del titular" required>
+            <br>
+
+            <label for="mail">Correo electrónico</label>
+            <input type="email" id="mail" name="mail" placeholder="ejemplo@correo.com" required> 
+            <br>
+
+            <label for="ticket">Número de Orden o Ticket</label>
+            <input type="text" id="ticket" name="ticket" placeholder="Ej: LG-12345" required> 
+            <br>
+
+            <label for="edad">Edad del titular</label>
+            <input type="number" id="edad" name="edad" min="18" max="99"> 
+            <br>
+
+            <label for="pais">País de atención</label>
+            <select name="pais" id="pais" required>
+                <option value="" disabled selected>Seleccione su país</option>
+                <option value="Peru">Perú</option>
+                <option value="Mexico">México</option>
+                <option value="Colombia">Colombia</option>
+                <option value="Chile">Chile</option>
+                <option value="Argentina">Argentina</option>
+            </select>
+        </fieldset>
+
+        <!-- Grupo 2: Calificación del Servicio -->
+        <fieldset>
+            <legend>Calificación del Servicio</legend>
+
+            <label for="satisfaccion">Satisfacción general (1 al 10)</label>
+            <input type="range" id="satisfaccion" name="satisfaccion" min="1" max="10"> 
+            <br>
+        </fieldset>
+
+        <!-- Grupo 3: Detalles y Productos Atendidos -->
+        <fieldset>
+            <legend>Detalles de la atención</legend>
+            
+            <p>¿El problema fue resuelto en la primera visita?</p>
+            <label for="resuelto_si">Sí, totalmente</label>
+            <input type="radio" id="resuelto_si" name="resuelto" value="si">
+            <br>
+
+            <label for="resuelto_no">No, requiere seguimiento</label>
+            <input type="radio" id="resuelto_no" name="resuelto" value="no">
+            <br><br>
+
+            <p>Productos o equipos LG atendidos</p>
+            
+            <label for="tv">Televisores / Pantallas</label>
+            <input type="checkbox" id="tv" name="producto[]" value="televisores">
+            <br>
+
+            <label for="audio">Equipos de Sonido</label>
+            <input type="checkbox" id="audio" name="producto[]" value="sonido">
+            <br>
+
+            <label for="lavadora">Lavadoras / Secadoras</label>
+            <input type="checkbox" id="lavadora" name="producto[]" value="lavadoras">
+            <br>
+
+            <label for="refrigeradora">Refrigeradoras</label>
+            <input type="checkbox" id="refrigeradora" name="producto[]" value="refrigeradoras">
+        </fieldset>
+
+        <!-- Grupo 4: Comentarios de experiencia -->
+        <fieldset>
+            <legend>Comentarios y Oportunidades de Mejora</legend>
+            <label for="comentarios">Detalle su experiencia o aspectos a mejorar</label><br>
+            <textarea id="comentarios" name="comentarios" rows="4" cols="60" placeholder="Escriba aquí sus observaciones sobre el servicio..."></textarea>
+        </fieldset>
+
+        <br>
+        <button type="submit">Enviar Calificación</button>
+
+    </form>
+</body>
+</html>
